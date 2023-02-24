@@ -30,12 +30,20 @@ public class HomePage {
     public WebElement getTypehotstarPage() {
         return TypehotstarPage;
     }
-    @FindBy(xpath = "//a[@to=\"/in/channels/star-bharat\"][1]")
-    private WebElement TypeDarePage;
+    @FindBy(xpath = "//a[@to=\"/in/channels/star-bharat\"]")
+    private WebElement TypeStarBharatPage;
 
-    public WebElement getTypeDarePage() {
-        return TypeDarePage;
+    @FindBy(xpath = "//div[@class=\"search-wrap hide-on-expand\"]")
+    private WebElement TypeJhansivideoPage;
+
+    public WebElement getTypeJhansivideoPage() {
+        return TypeJhansivideoPage;
     }
+
+    public WebElement getTypeStarBharatPage() {
+        return TypeStarBharatPage;
+    }
+
     @FindBy(xpath = "//div[@class=\"action-play\"]")
     private WebElement TypeplayPage;
 
@@ -104,8 +112,15 @@ public class HomePage {
     }
 
 //for star maa
-    @FindBy(xpath = "//div[@class=\"ad-cta-overlay\"]")
+    @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
     WebElement TypAssertPage;
+
+    public WebElement getTypeStarMaaAssertPage() {
+        return TypeStarMaaAssertPage;
+    }
+
+    @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
+    WebElement TypeStarMaaAssertPage;
 
     //search hotstarspecials chennel
     @FindBy(xpath = "//a[@to=\"/in/channels/hotstar-specials\"]")
@@ -115,7 +130,7 @@ public class HomePage {
     @FindBy(xpath = "//div[@class=\"search-wrap hide-on-expand\"][1]")
     WebElement TypeHotstarSplVideoPage;
     //jhansi pause
-    @FindBy(xpath = "//div[@class=\"watch-area\"]")
+    @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
     WebElement TypeHotstarSplPausePage;
 
     public WebElement getTypeHotstarSplPausePage() {
@@ -166,6 +181,13 @@ public class HomePage {
     //outlineassert
     @FindBy(xpath = "//div[@class=\"col-xs-12 content-holder\"]")
     WebElement TypeStarJalsaAssertPage;
+
+    public WebElement getTypeStarMaaplayPage() {
+        return TypeStarMaaplayPage;
+    }
+
+    @FindBy(xpath = "//div[@class=\"play-btn no-badges\"]")
+    WebElement TypeStarMaaplayPage;
 
     //last invalid
     @FindBy(xpath = "//h3[@class=\"title\"]")
