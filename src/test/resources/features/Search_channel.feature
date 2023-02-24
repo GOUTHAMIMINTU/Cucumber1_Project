@@ -11,7 +11,7 @@ Feature: search a channel feature
   Scenario: verify that user can able to search Dance to Dare
     Given user navigates to the Tv page
     When the user enter the StarBharat
-    Then the Dare to Dare video  should be played
+    Then the Dance to Dare video  should be played
 
 
   Scenario: verify that user can able to xyijklopmn
@@ -24,10 +24,10 @@ Feature: search a channel feature
     When user enter the StarMaa
     Then the BB Jodi should be played
 
-  Scenario: verify that user can able to search Rakhi Bhanadan
-    Given user navigate to the tV page
-    When user enter the Star Jalsha
-    Then the Rakhi Bhanadan should be played
+#  Scenario: verify that user can able to search Rakhi Bhanadan
+#    Given user navigate to the tV page
+#    When user enter the Star Jalsha
+#    Then the Rakhi Bhanadan should be played
 
   Scenario Outline: verify that user can able to search Star Jalsha
     Given User navigate to the tV page

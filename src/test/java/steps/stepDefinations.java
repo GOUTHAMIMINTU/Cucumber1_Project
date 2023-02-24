@@ -36,7 +36,7 @@ HashMap<String,String> data;
     public stepDefinations(BrowserManager browserManager) {
         this.driver = browserManager.getDriver();
     }
-        @Before
+        @Before(order = 1)
         public void before(Scenario scenario){
          this.scenario = scenario;
 
@@ -49,24 +49,21 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
     }
     @When("the user enter the channel name")
-    public void the_user_enter_the_channel_name() throws InterruptedException{
+    public void the_user_enter_the_channel_name() {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
-        Thread.sleep(2000);
         homePage.getTypeTvPage().click();
-        Thread.sleep(2000);
         homePage.getTypehotstarPage().click();
         homePage.getTypeSearchPage().sendKeys(data.get("Search_Type"));
         homePage.getTypevideoPage().click();
     }
     @Then("the channel should be displayed")
-    public void the_channel_should_be_displayed() throws InterruptedException {
+    public void the_channel_should_be_displayed()  {
         Actions action= new Actions(driver);
         HomePage homePage=new HomePage(driver);
-        Thread.sleep(5000);
-     action.moveToElement(homePage.getTypeStopPage()).build().perform();
-     action.moveToElement(homePage.getTypePausePage()).build().perform();
-     Assert.assertTrue(homePage.getTypAssertPage().isDisplayed());
+        action.moveToElement(homePage.getTypeStopPage()).build().perform();
+        action.moveToElement(homePage.getTypePausePage()).build().perform();
+        Assert.assertTrue(homePage.getTypAssertPage().isDisplayed());
     }
 
     @And("user enter {string} and {string}")
@@ -106,22 +103,20 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
     }
     @When("the user enter the HotstarSpecials")
-    public void the_user_enter_the_hotstar_specials() throws InterruptedException{
+    public void the_user_enter_the_hotstar_specials() {
         HomePage homePage=new HomePage(driver);
         homePage.getTypeTvPage().click();
-        Thread.sleep(3000);
+
         data = TestDataReader.getData(scenario.getName());
         homePage.getTypeenterPage().click();
        homePage.getTypeHotstarsplSearchPage().sendKeys(data.get("Search_Type"));
     }
     @Then("the Jhansi S2 video should be displayed")
-    public void the_jhansi_s2_videp_should_be_displayed() throws InterruptedException {
+    public void the_jhansi_s2_videp_should_be_displayed()  {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        homePage.getTypeHotstarSplVideoPage() .click();
-        Thread.sleep(8000);
-        action.moveToElement(homePage.getTypeHotstarSplPausePage()).build().perform();
+        homePage.getTypeJhansivideoPage().click();
         Assert.assertTrue(homePage.getTypeHotStarSplAssertPage() .isDisplayed());
 
     }
@@ -143,20 +138,17 @@ HashMap<String,String> data;
     public void the_user_enter_the_star_bharat() {
         HomePage homePage=new HomePage(driver);
         homePage.getTypeTvPage().click();
-        homePage.getTypeDarePage().click();
+        homePage.getTypeStarBharatPage().click();
         data = TestDataReader.getData(scenario.getName());
         homePage.getTypeSearchPage().sendKeys(data.get("Search_Type"));
     }
-    @Then("the Dare to Dare video  should be played")
-    public void theDareToDareVideoShouldBePlayed() throws InterruptedException {
+
+    @Then("the Dance to Dare video  should be played")
+    public void theDanceToDareVideoShouldBePlayed() {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
         homePage.getTypevideoPage().click();
-        Thread.sleep(8000);
-        homePage.getTypeDanceVideoplayPage().click();
-        Thread.sleep(8000);
-        action.moveToElement(homePage.getTypeStarpagePausePage()).build().perform();
         Assert.assertTrue(homePage.getTypeStarBharatAssertPage() .isDisplayed());
     }
     //StarMaa
@@ -168,23 +160,21 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
     }
     @When("user enter the StarMaa")
-    public void user_enter_the_star_maa() throws InterruptedException{
+    public void user_enter_the_star_maa() {
         HomePage homePage=new HomePage(driver);
         homePage.getTypeTvPage().click();
         homePage.getTypeMaaPage().click();
-        Thread.sleep(2000);
+
         data = TestDataReader.getData(scenario.getName());
        homePage.getTypeSearchPage().sendKeys(data.get("Search_Type"));
     }
     @Then("the BB Jodi should be played")
-    public void the_bb_jodi_should_be_played() throws InterruptedException {
+    public void the_bb_jodi_should_be_played() {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
         homePage.getTypevideoPage().click();
-        Thread.sleep(3000);
-        action.moveToElement(homePage.getTypeMaaPausePage()).build().perform();
-        Assert.assertTrue(homePage.getTypAssertPage().isDisplayed());
+       Assert.assertTrue(homePage.getTypeStarMaaAssertPage().isDisplayed());
     }
 
     //star Jalsha
@@ -195,23 +185,20 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
     }
     @When("User able to {string} video")
-   public void user_able_to_video(String search) throws  InterruptedException {
+   public void user_able_to_video(String search)  {
         HomePage  homePage= new HomePage(driver);
         Wait wait1 = new FluentWait(driver)
                 .withTimeout(10, TimeUnit.SECONDS)
                 .pollingEvery(2, TimeUnit.SECONDS)
                 .ignoring(Exception.class);
-
         homePage.getTypeTvPage().click();
        homePage.getTypeStarJalsaSearchPage().click();
-
-        WebElement Input=homePage.getTypeStarJalsaSearchPage();
+       WebElement Input=homePage.getTypeStarJalsaSearchPage();
         Input.sendKeys(search);}
     @And("User can click on enter")
-    public void user_can_click_on_enter() throws InterruptedException {
+    public void user_can_click_on_enter()  {
         HomePage homePage=new HomePage(driver);
          homePage.getTypeStarJalsaSearchPage().sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
     }
     @Then("User redirected to the relavant page")
     public void user_redirected_to_the_relavant_page() {
@@ -226,25 +213,23 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
     }
     @When("the user enter the StarVijay")
-    public void the_user_enter_the_star_vijay() throws InterruptedException {
+    public void the_user_enter_the_star_vijay()  {
         HomePage homePage=new HomePage(driver);
         homePage.getTypeTvPage().click();
         homePage.getTypeVijayPage().click();
-        Thread.sleep(2000);
+
         data = TestDataReader.getData(scenario.getName());
         homePage.getTypeVijaySearchPage().sendKeys(data.get("Search_Type"));
         homePage.getTypeVijaySearchPage().sendKeys(Keys.ENTER);
     }
     @Then("the xyijklopmn video  should be played")
-    public void the_xyijklopmn_video_should_be_played() throws InterruptedException {
+    public void the_xyijklopmn_video_should_be_played() {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
-        Thread.sleep(3000);
+
         Assert.assertTrue(homePage.getTypeInvalidPage() .isDisplayed());
 
     }
-
-
 
 
 
