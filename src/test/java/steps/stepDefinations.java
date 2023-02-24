@@ -148,7 +148,7 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        homePage.getTypevideoPage().click();
+        //homePage.getTypevideoPage().click();
         Assert.assertTrue(homePage.getTypeStarBharatAssertPage() .isDisplayed());
     }
     //StarMaa
@@ -173,7 +173,7 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        homePage.getTypevideoPage().click();
+       // homePage.getTypevideoPage().click();
        Assert.assertTrue(homePage.getTypeStarMaaAssertPage().isDisplayed());
     }
 
