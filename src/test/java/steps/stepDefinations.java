@@ -114,15 +114,15 @@ HashMap<String,String> data;
         ClickUtils.click(driver,homePage.getTypeTvPage());
         ClickUtils.click(driver,homePage.getTypeenterPage());
         data = TestDataReader.getData(scenario.getName());
-
-       homePage.getTypeHotstarsplSearchPage().sendKeys(data.get("Search_Type"));
+        homePage.getTypeHotstarsplSearchPage().sendKeys(data.get("Search_Type"));
     }
     @Then("the Jhansi S2 video should be displayed")
     public void the_jhansi_s2_videp_should_be_displayed()  {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        homePage.getTypeJhansivideoPage().click();
+        //homePage.getTypeJhansivideoPage().click();
+       ClickUtils.click(driver,homePage.getTypeJhansivideoPage());
         Assert.assertTrue(homePage.getTypeHotStarSplAssertPage() .isDisplayed());
 
     }
