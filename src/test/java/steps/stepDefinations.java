@@ -122,7 +122,7 @@ HashMap<String,String> data;
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
         //homePage.getTypeJhansivideoPage().click();
-        ClickUtils.click(driver,homePage.getTypeJhansivideoPage());
+       ClickUtils.click(driver,homePage.getTypeJhansivideoPage());
         Assert.assertTrue(homePage.getTypeHotStarSplAssertPage() .isDisplayed());
 
     }
