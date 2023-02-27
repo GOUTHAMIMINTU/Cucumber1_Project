@@ -87,7 +87,7 @@ public class HomePage {
 
 
 
-    @FindBy(xpath = "//a[@to=\"/tv\"]")
+    @FindBy(xpath = "//a[@class=\"nav-link\"][1]")////a[@to="/tv"]
     @Getter
     WebElement TypeTvPage;
 
