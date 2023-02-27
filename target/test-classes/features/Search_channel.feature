@@ -24,7 +24,7 @@ Feature: search a channel feature
     When user enter the StarMaa
     Then the BB Jodi should be played
 
-@smoke
+
   Scenario Outline: verify that user can able to search Star Jalsha
     Given User navigate to the tV page
     When User able to "<search>" video
