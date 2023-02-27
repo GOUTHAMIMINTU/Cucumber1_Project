@@ -2,7 +2,7 @@ Feature: search a channel feature
 
   Background: user need to enter in to channel
     Given user entered in to channel
-
+@smoke
   Scenario: verify that user can able to search Jhansi S2
     Given user navigates to the TV page
     When the user enter the HotstarSpecials
@@ -12,7 +12,7 @@ Feature: search a channel feature
     Given user navigates to the Tv page
     When the user enter the StarBharat
     Then the Dance to Dare video  should be played
-@smoke
+
 
   Scenario: verify that user can able to xyijklopmn
     Given user navigate to the tv's page
