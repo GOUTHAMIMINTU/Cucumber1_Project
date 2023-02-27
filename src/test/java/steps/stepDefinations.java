@@ -44,7 +44,7 @@ HashMap<String,String> data;
     }
     @Given("user navigates to the homepage")
     public void user_navigates_to_the_homepage() {
-       // data = TestDataReader.getData(scenario.getName());
+
         url=QAprops.getValue("url");
         driver.get(url);
         data = TestDataReader.getData(scenario.getName());
@@ -53,52 +53,24 @@ HashMap<String,String> data;
     public void the_user_enter_the_channel_name() {
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
-//        homePage.getTypeTvPage().click();
-//        homePage.getTypehotstarPage().click();
+
         ClickUtils.click(driver,homePage.getTypeTvPage());
         ClickUtils.click(driver,homePage.getTypehotstarPage());
 
         homePage.getTypeSearchPage().sendKeys(data.get("Search_Type"));
-        //homePage.getTypevideoPage().click();
+
     }
     @Then("the channel should be displayed")
     public void the_channel_should_be_displayed()  {
         Actions action= new Actions(driver);
         HomePage homePage=new HomePage(driver);
         action.moveToElement(homePage.getTypeStopPage()).build().perform();
-        //action.moveToElement(homePage.getTypePausePage()).build().perform();
+
         Assert.assertTrue(homePage.getTypAssertPage().isDisplayed());
     }
 
-//    @And("user enter {string} and {string}")
-//    public void userEnterAnd(String arg0, String arg1) {
-//
-//    }
-//
-//    @Given("user is on homepage")
-//    public void userIsOnHomepage() {
-//    }
-//
-//    @When("user navitage to homepage")
-//    public void userNavitageToHomepage() {
-//    }
-//
-//    @Given("User is on Home Page")
-//    public void userIsOnHomePage() {
-//    }
-//
-//    @When("User Navigate to LogIn Page")
-//    public void userNavigateToLogInPage() {
-//    }
-//
-//    @And("User enters {string} and {string}")
-//    public void userEntersAnd(String arg0, String arg1) {
-//    }
-//
-//    @Then("Message displayed Login Successfully")
-//    public void messageDisplayedLoginSuccessfully() {
-//    }
-    //HostStarSpecials
+
+
 
     @Given("user navigates to the TV page")
     public void user_navigates_to_the_tv_page() {
@@ -109,8 +81,7 @@ HashMap<String,String> data;
     @When("the user enter the HotstarSpecials")
     public void the_user_enter_the_hotstar_specials() {
         HomePage homePage=new HomePage(driver);
-       // homePage.getTypeTvPage().click();
-        //homePage.getTypeenterPage().click();
+
         ClickUtils.click(driver,homePage.getTypeTvPage());
         ClickUtils.click(driver,homePage.getTypeenterPage());
         data = TestDataReader.getData(scenario.getName());
@@ -121,7 +92,7 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        //homePage.getTypeJhansivideoPage().click();
+
        ClickUtils.click(driver,homePage.getTypeJhansivideoPage());
         Assert.assertTrue(homePage.getTypeHotStarSplAssertPage() .isDisplayed());
 
@@ -132,7 +103,7 @@ HashMap<String,String> data;
     public void userEnteredInToChannel() {
         System.out.println("from Background");
     }
-//StarBharat
+
 
     @Given("user navigates to the Tv page")
     public void userNavigatesToTheTvPage() {
@@ -143,9 +114,9 @@ HashMap<String,String> data;
     @When("the user enter the StarBharat")
     public void the_user_enter_the_star_bharat() {
         HomePage homePage=new HomePage(driver);
-        //homePage.getTypeTvPage().click();
+
         ClickUtils.click(driver,homePage.getTypeTvPage());
-       // homePage.getTypeStarBharatPage().click();
+
        ClickUtils.click(driver,homePage.getTypeStarBharatPage());
         data = TestDataReader.getData(scenario.getName());
         homePage.getTypeSearchPage().sendKeys(data.get("Search_Type"));
@@ -156,13 +127,13 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-        //homePage.getTypevideoPage().click();
+
         Assert.assertTrue(homePage.getTypeStarBharatAssertPage() .isDisplayed());
     }
-    //StarMaa
+
     @Given("user navigate to the Tv page")
     public void user_navigate_to_the_tv_page() {
-        // Write code here that turns the phrase above into concrete actions
+
         url=QAprops.getValue("url");
         driver.get(url);
         data = TestDataReader.getData(scenario.getName());
@@ -170,8 +141,7 @@ HashMap<String,String> data;
     @When("user enter the StarMaa")
     public void user_enter_the_star_maa() {
         HomePage homePage=new HomePage(driver);
-       // homePage.getTypeTvPage().click();
-      //  homePage.getTypeMaaPage().click();
+
         ClickUtils.click(driver,homePage.getTypeTvPage());
         ClickUtils.click(driver,homePage.getTypeMaaPage());
         data = TestDataReader.getData(scenario.getName());
@@ -182,7 +152,7 @@ HashMap<String,String> data;
         data = TestDataReader.getData(scenario.getName());
         HomePage homePage=new HomePage(driver);
         Actions action= new Actions(driver);
-       // homePage.getTypevideoPage().click();
+
        Assert.assertTrue(homePage.getTypeStarMaaAssertPage().isDisplayed());
     }
 
@@ -196,10 +166,10 @@ HashMap<String,String> data;
     @When("User able to {string} video")
    public void user_able_to_video(String search)  {
         HomePage  homePage= new HomePage(driver);
-//
+
         homePage.getTypeTvPage().click();
         ClickUtils.click(driver,homePage.getTypeTvPage());
-      // homePage.getTypeStarJalsaSearchPage().click();
+
         ClickUtils.click(driver,homePage.getTypeStarJalsaSearchPage());
        WebElement Input=homePage.getTypeStarJalsaSearchPage();
         Input.sendKeys(search);}
@@ -213,7 +183,7 @@ HashMap<String,String> data;
         HomePage homePage=new HomePage(driver);
         Assert.assertTrue(homePage. getTypeStarJalsaAssertPage().isDisplayed());
     }
-    //star vijay
+
     @Given("user navigate to the tv's page")
     public void user_navigate_to_the_tv_s_page() {
         url=QAprops.getValue("url");
@@ -223,8 +193,7 @@ HashMap<String,String> data;
     @When("the user enter the StarVijay")
     public void the_user_enter_the_star_vijay()  {
         HomePage homePage=new HomePage(driver);
-        //homePage.getTypeTvPage().click();
-        //homePage.getTypeVijayPage().click();
+
         ClickUtils.click(driver,homePage.getTypeTvPage());
         ClickUtils.click(driver,homePage.getTypeVijayPage());
 
