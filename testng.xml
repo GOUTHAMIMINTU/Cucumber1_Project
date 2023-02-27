@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/BOGOUTHA/Downloads/capg/Cucumber1/src/test/resources">
+    <test verbose="2" preserve-order="true" name="C:/Users/BOGOUTHA/Downloads/capg/Cucumber1/src/test/java/utils/QAprops.java">
         <classes>
             <class name="runners.TestRunner"></class>
         </classes>
