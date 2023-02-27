@@ -20,7 +20,8 @@ public class Hooks {
             TakesScreenshot ts=(TakesScreenshot) browserManager.getDriver();
             byte[] src=ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(src,"image/png","screenshot");
-}    }
+}
+}
     @After(order = 0)
     public void tearDown(){
     browserManager.getDriver().quit();

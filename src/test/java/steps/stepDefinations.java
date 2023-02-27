@@ -196,11 +196,8 @@ HashMap<String,String> data;
     @When("User able to {string} video")
    public void user_able_to_video(String search)  {
         HomePage  homePage= new HomePage(driver);
-//        Wait wait1 = new FluentWait(driver)
-//                .withTimeout(10, TimeUnit.SECONDS)
-//                .pollingEvery(2, TimeUnit.SECONDS)
-//                .ignoring(Exception.class);
-        //homePage.getTypeTvPage().click();
+//
+        homePage.getTypeTvPage().click();
         ClickUtils.click(driver,homePage.getTypeTvPage());
       // homePage.getTypeStarJalsaSearchPage().click();
         ClickUtils.click(driver,homePage.getTypeStarJalsaSearchPage());
