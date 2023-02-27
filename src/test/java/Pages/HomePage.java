@@ -94,7 +94,7 @@ public class HomePage {
     @Getter
     WebElement TypeStarBharatAssertPage;
     //jhansi assert page
-    @FindBy(xpath = "//div[@class=\"subtitle-container\"]")
+    @FindBy(xpath = "//div[@class=\"master-container-inner\"]")
     @Getter
     WebElement TypeHotStarSplAssertPage;
 
